@@ -46,8 +46,8 @@
 
 <br>
 
-<input id="insertPatient" name="insertPatient" type="button" value="Save" class="btn btn-primary">
-<input type="hidden" id="hidPatientSIDSave" name="hidPatientIDSave" value="" +  + "">
+<input id="insertPatient" name="insertPatient" type="button" value="Save Details" class="btn btn-primary">
+<input type="hidden" id="hidPatientIDSave" name="hidPatientIDSave" value="">
 
 </form>
 <div id="alertSuccess" class="alert alert-success"></div>
@@ -58,7 +58,7 @@
 <div id="divItemsGrid">
  <%
  Patient patientObj = new Patient();
- out.print(patientObj.readItems());
+ out.print(patientObj.readPatients());
  %>
 </div>
 

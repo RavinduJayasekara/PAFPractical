@@ -133,6 +133,8 @@ public class PatientsAPI extends HttpServlet {
 		
 		Map paras = getParasMap(request);
 		
+		System.out.println(paras.get("patientID").toString());
+		
 		String output = patientObj.deleteItem(paras.get("patientID").toString());
 		
 		response.getWriter().write(output); 
