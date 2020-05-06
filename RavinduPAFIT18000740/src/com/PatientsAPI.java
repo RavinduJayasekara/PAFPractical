@@ -106,7 +106,7 @@ public class PatientsAPI extends HttpServlet {
 		
 		Map paras = getParasMap(request);
 		
-		System.out.println(paras.get("hidPatientIDSave").toString());
+		System.out.println(paras.get("hidPatientIDSave").toString() + "come on");
 		
 		String output = patientObj.updateItem(paras.get("hidPatientIDSave").toString(),
 		

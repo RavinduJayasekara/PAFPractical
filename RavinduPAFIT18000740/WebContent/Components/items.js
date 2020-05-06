@@ -218,7 +218,7 @@ $(document).on("click", ".btnRemove", function(event)
 				 
 						type : "DELETE",
 				 
-						data : "patientID=" + $(this).data("patientID"),
+						data : "patientID=" + $(this).data("patientid"),
 				 
 						dataType : "text",
 				 
