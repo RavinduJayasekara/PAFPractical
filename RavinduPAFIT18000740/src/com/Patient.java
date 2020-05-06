@@ -232,7 +232,7 @@ public class Patient {
 			
 			// create a prepared statement
 			 
-			String query = "insert into patients(patientUserName,patientPassword,patientName,patientContact,patientAddress,patientEmail) values (?, ?, ?, ?, ?, ?)";
+			String query = "insert into patient(patientUserName,patientPassword,patientName,patientContact,patientAddress,patientEmail) values (?, ?, ?, ?, ?, ?)";
 			 
 			PreparedStatement preparedStmt = con.prepareStatement(query);
 			 
@@ -284,9 +284,9 @@ public class Patient {
 		try
 			 
 		{
-			 
+			 System.out.println(1);
 			Connection con = connect();
-			 
+			System.out.println(2);
 			if (con == null)
 			 
 			{
@@ -294,9 +294,9 @@ public class Patient {
 				return "Error while connecting to the database for updating.";
 			 
 			}
-			 
+			System.out.println(3);
 			// create a prepared statement
-			 
+			System.out.println(1);
 			String query = "UPDATE patient SET patientUsername=?,patientPassword=?,patientName=?,patientAddress=?patientContact=?,patientEmail=? WHERE patientID=?";
 			 
 							
@@ -324,9 +324,9 @@ public class Patient {
 			
 			con.close();
 			
-			String newItems = readItems();
+			String newPatientDetails = readItems();
 			
-			output = "{\"status\":\"success\", \"data\": \"" + newItems + "\"}";
+			output = "{\"status\":\"success\", \"data\": \"" + newPatientDetails + "\"}";
 			 
 		}
 		
@@ -334,9 +334,10 @@ public class Patient {
 		
 		{
 		
-			output = "{\"status\":\"error\", \"data\": \"Error while updating the item.\"}";
+			output = "{\"status\":\"error\", \"data\": \"Error while updating the patient.\"}";
 			 
 			System.err.println(e.getMessage());
+			e.printStackTrace();
 			
 		}
 		
