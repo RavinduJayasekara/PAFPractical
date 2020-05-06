@@ -40,22 +40,6 @@ public class PatientsAPI extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String loginusername = request.getParameter("pusername");
-		String loginpassword  = request.getParameter("ppassword");
-		
-		System.out.println(loginpassword + loginusername);
-		String login = patientObj.patientLogin(loginusername, loginpassword);
-		
-		if(login.equals("admin")) {
-			response.sendRedirect("/EditPatients.jsp");
-		}
-		else if(login.equals("normal")) {
-			System.out.println("Successfully Logged In");
-		}
-		else {
-			System.out.println("Error");
-		}
-		
 			String username = request.getParameter("patientUsername");
 				 
 			String password = request.getParameter("patientPassword");
@@ -121,6 +105,8 @@ public class PatientsAPI extends HttpServlet {
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		Map paras = getParasMap(request);
+		
+		System.out.println(paras.get("hidPatientIDSave").toString());
 		
 		String output = patientObj.updateItem(paras.get("hidPatientIDSave").toString(),
 		

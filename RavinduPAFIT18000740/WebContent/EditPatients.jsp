@@ -47,10 +47,9 @@
 <br>
 
 <input id="insertPatient" name="insertPatient" type="button" value="Save" class="btn btn-primary">
-<input type="hidden" id="hidItemIDSave" name="hidItemIDSave" value="">
+<input type="hidden" id="hidPatientSIDSave" name="hidPatientIDSave" value="" +  + "">
 
 </form>
-
 <div id="alertSuccess" class="alert alert-success"></div>
 <div id="alertError" class="alert alert-danger"></div>
 
