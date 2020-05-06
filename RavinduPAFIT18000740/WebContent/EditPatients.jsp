@@ -12,7 +12,7 @@
 <script src="Components/items.js"></script>
 </head>
 <body>
-<label class = "display-4">Submit Patient Details</label>
+<label class = "display-4">Edit Patient Details</label>
 
 <form id="formItem" name="formItem" method="post" action="items.jsp">
 

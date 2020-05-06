@@ -173,7 +173,7 @@ public class Patient {
 				// buttons
 	
 		 
-				output += "<td><input name='btnUpdate' type='button' value='Update' class='btnUpdate btn btn-secondary'></td>" + "<td><input name='btnRemove' type='button' value='Remove' class='btnRemove btn btn-danger' data-itemid='" + patientID + "'>" + "</td></tr>";
+				output += "<td><input name='btnUpdate' type='button' value='Update' class='btnUpdate btn btn-secondary'></td>" + "<td><input name='btnRemove' type='button' value='Remove' class='btnRemove btn btn-danger' data-patientid='" + patientID + "'>" + "</td></tr>";
 	 
 	 
 			}
@@ -284,9 +284,9 @@ public class Patient {
 		try
 			 
 		{
-			 System.out.println(1);
+
 			Connection con = connect();
-			System.out.println(2);
+
 			if (con == null)
 			 
 			{
@@ -294,40 +294,40 @@ public class Patient {
 				return "Error while connecting to the database for updating.";
 			 
 			}
-			System.out.println(3);
+
 			// create a prepared statement
-			System.out.println(4);
+
 			String query = "UPDATE patient SET patientUserName=?,patientPassword=?,patientName=?,patientAddress=?,patientContact=?,patientEmail=? WHERE patientID=?";
-			System.out.println(5);
+
 							
 			PreparedStatement preparedStmt = con.prepareStatement(query);
-			System.out.println(6);
+
 			// binding values
 			 
 			preparedStmt.setString(1, username);
-			System.out.println(7);
+
 			preparedStmt.setString(2, password);
-			System.out.println(8);
+
 			preparedStmt.setString(3, name);
-			System.out.println(9);
+
 			preparedStmt.setString(4, address);
-			System.out.println(10);
+
 			preparedStmt.setInt(5, Integer.parseInt(contact));
-			System.out.println(11);
+
 			preparedStmt.setString(6, email);
-			System.out.println(12);
+
 			preparedStmt.setInt(7, Integer.parseInt(ID));
-			System.out.println(13);
+
 			// execute the statement
 			
 			preparedStmt.execute();
-			System.out.println(14);
+
 			con.close();
-			System.out.println(15);
+
 			String newPatientDetails = readPatients();
-			System.out.println(16);
+
 			output = "{\"status\":\"success\", \"data\": \"" + newPatientDetails + "\"}";
-			System.out.println(17);
+
 		}
 		
 		catch (Exception e)
@@ -355,9 +355,9 @@ public class Patient {
 		try
 	 
 		{
-	 
+
 			Connection con = connect();
-	 
+
 			if (con == null)
 	 
 			{
@@ -374,6 +374,8 @@ public class Patient {
 	 
 			// binding values
 	 
+			int n1 = Integer.parseInt(patientID);
+			System.out.println(n1 + "sheer");
 			preparedStmt.setInt(1, Integer.parseInt(patientID));
 	 
 			// execute the statement
@@ -394,7 +396,7 @@ public class Patient {
 	 
 			output = "{\"status\":\"error\", \"data\": \"Error while deleting the patient.\"}";
 	 
-	
+	e.printStackTrace();
 			System.err.println(e.getMessage());
 	 
 		}
