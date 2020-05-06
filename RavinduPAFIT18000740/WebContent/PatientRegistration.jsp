@@ -42,7 +42,7 @@
 
 <br>
 
-<input id="insertPatient" name="insertPatient" type="button" value="Save" class="btn btn-primary">
+<input id="insertPatient" name="insertPatient" type="button" value="Sign Up" class="btn btn-primary">
 <input type="hidden" id="hidPatientIDSave" name="hidPatientIDSave" value="">
 
 </form>

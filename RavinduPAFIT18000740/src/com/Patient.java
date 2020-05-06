@@ -93,7 +93,7 @@ public class Patient {
 
 	}
 	}
-	public String readItems()
+	public String readPatients()
 	 
 	{
 	 
@@ -256,7 +256,7 @@ public class Patient {
 			
 			con.close();
 			
-			String newPatients = readItems();
+			String newPatients = readPatients();
 			
 			output = "{\"status\":\"success\", \"data\": \"" + newPatients + "\"}";
 			 
@@ -296,38 +296,38 @@ public class Patient {
 			}
 			System.out.println(3);
 			// create a prepared statement
-			System.out.println(1);
-			String query = "UPDATE patient SET patientUsername=?,patientPassword=?,patientName=?,patientAddress=?patientContact=?,patientEmail=? WHERE patientID=?";
-			 
+			System.out.println(4);
+			String query = "UPDATE patient SET patientUserName=?,patientPassword=?,patientName=?,patientAddress=?,patientContact=?,patientEmail=? WHERE patientID=?";
+			System.out.println(5);
 							
 			PreparedStatement preparedStmt = con.prepareStatement(query);
-			 
+			System.out.println(6);
 			// binding values
 			 
 			preparedStmt.setString(1, username);
-			 
+			System.out.println(7);
 			preparedStmt.setString(2, password);
-			 
+			System.out.println(8);
 			preparedStmt.setString(3, name);
-			
+			System.out.println(9);
 			preparedStmt.setString(4, address);
-			
+			System.out.println(10);
 			preparedStmt.setInt(5, Integer.parseInt(contact));
-			
+			System.out.println(11);
 			preparedStmt.setString(6, email);
-			
+			System.out.println(12);
 			preparedStmt.setInt(7, Integer.parseInt(ID));
-			
+			System.out.println(13);
 			// execute the statement
 			
 			preparedStmt.execute();
-			
+			System.out.println(14);
 			con.close();
-			
-			String newPatientDetails = readItems();
-			
+			System.out.println(15);
+			String newPatientDetails = readPatients();
+			System.out.println(16);
 			output = "{\"status\":\"success\", \"data\": \"" + newPatientDetails + "\"}";
-			 
+			System.out.println(17);
 		}
 		
 		catch (Exception e)
@@ -382,7 +382,7 @@ public class Patient {
 	 
 			con.close();
 	 
-			String currentPatients = readItems();
+			String currentPatients = readPatients();
 	 
 			output = "{\"status\":\"success\", \"data\": \"" + currentPatients + "\"}";
 	 
